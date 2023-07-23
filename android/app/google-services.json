@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1004880642814",
+    "project_id": "securednote",
+    "storage_bucket": "securednote.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004880642814:android:c6b88c30c8303b0e929baf",
+        "android_client_info": {
+          "package_name": "com.example.samsung_note"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004880642814-46gilkt58u7lch4qkk8a037f2v0c4fhs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS5Ry4C-PUmI29olFk2BWjZoqihcRiREM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004880642814-46gilkt58u7lch4qkk8a037f2v0c4fhs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
