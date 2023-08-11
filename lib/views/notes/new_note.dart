@@ -31,7 +31,7 @@ class _NewNoteState extends State<NewNote> {
           enableFeedback: false,
           splashRadius: 0.1,
           onPressed: () => Navigator.of(context)
-              .pushNamedAndRemoveUntil(homeRoute, (route) => false),
+              .pushNamedAndRemoveUntil(homeNotesViewRoute, (route) => false),
           icon: const Icon(Icons.arrow_back_ios),
         ),
 

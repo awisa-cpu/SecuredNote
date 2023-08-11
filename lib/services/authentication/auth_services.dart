@@ -11,32 +11,32 @@ class AuthService implements AuthProvider {
       AuthService(provider: FirebaseAuthProvider());
 
   @override
- Future initializeApp() async {
+  Future initializeApp() async {
     provider.initializeApp();
   }
 
-  
-
   @override
-  void logout() {
-    provider.logout();
+  Future<void> registerUser(
+      {required String email, required String password}) async {
+    await provider.registerUser(email: email, password: password);
   }
 
   @override
-  Future<void> register({required String email, required String password}) async {
-   await  provider.register(email: email, password: password);
+  Future<void> sendEmailVerification() {
+    return provider.sendEmailVerification();
   }
 
   @override
-  void sendEmailVerification() {
-    provider.sendEmailVerification();
+  AuthUser? get getCurrentUser => provider.getCurrentUser;
+
+  @override
+  Future<AuthUser?> loginUser(
+      {required String email, required String password}) async {
+    return await provider.loginUser(email: email, password: password);
   }
 
   @override
-  AuthUser? get user => provider.user;
-  
-  @override
-  Future<AuthUser> login({required String email, required String password}) async{
-  return await provider.login(email: email, password: password);
+  Future<void> logout() {
+    return provider.logout();
   }
 }

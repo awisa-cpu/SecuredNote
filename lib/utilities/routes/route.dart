@@ -13,7 +13,7 @@ Route generateRoutes(RouteSettings settings) {
         case newNoteRoute:
           return const NewNote();
 
-        case homeRoute:
+        case homeNotesViewRoute:
           return const NotesView();
 
         case loginRoute:

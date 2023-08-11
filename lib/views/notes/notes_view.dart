@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:samsung_note/utilities/dialogs/logout_dialog.dart';
 import 'package:samsung_note/utilities/routes/routes_constants.dart';
+import 'package:samsung_note/view_controller/auth_bloc.dart';
+import 'package:samsung_note/view_controller/auth_event.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -48,12 +52,25 @@ class NotesView extends StatelessWidget {
                     const Spacer(),
                     //
                     IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.picture_as_pdf)),
+                      onPressed: () {},
+                      icon: const Icon(Icons.picture_as_pdf),
+                    ),
                     //
                     IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.search_rounded))
+                      onPressed: () {},
+                      icon: const Icon(Icons.search_rounded),
+                    ),
+
+                    //
+                    IconButton(
+                      onPressed: () async {
+                        final ans = await logoutDialog(context: context,title: "Logout Dialog",content: "Are you sure you want to logout");
+                        if (ans ?? false) {
+                          context.read<AuthBloc>().add(AuthEventLogOut());
+                        }
+                      },
+                      icon: const Icon(Icons.logout),
+                    )
                   ],
                 ),
               ],

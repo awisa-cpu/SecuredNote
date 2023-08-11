@@ -1,23 +1,21 @@
-
 import 'package:samsung_note/models/auth/auth_user.dart';
 
-abstract class AuthProvider{
-
+abstract class AuthProvider {
 //create account
-Future<void> register({required String email, required String password});
+  Future<void> registerUser({required String email, required String password});
 
 //login
-Future<AuthUser> login({required String email, required String password});
+  Future<AuthUser?> loginUser({required String email, required String password});
 
 //get authUser
-AuthUser? get user;
+  AuthUser? get getCurrentUser;
 
 //logout
-void logout();
+  Future<void> logout();
 
 //send email verification
-void sendEmailVerification();
+  Future<void> sendEmailVerification();
 
 //initailize
-void initializeApp();
+  Future<void> initializeApp();
 }
